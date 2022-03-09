@@ -1,5 +1,6 @@
 import pytest
 from httpx import get
+#from requests import get
 import constants as const
 
 
@@ -17,12 +18,41 @@ def test_consulta_cotacao_moeda():
              f'\nUSD 1 = R$ {um_dolar_em_real}\n' \
              f'Valor cotado: {valor_cotado}\n' \
              f'Maxima do dia: {maxima_do_dia}\n' \
-             f'Mínima do dia: {minima_do_dia}\n' \
-             f'Variação: {variacao}'
+             f'Mínima do dia: {minima_do_dia}\n'
 
-    saida = {'\nMaxima do dia: ': eval(maxima_do_dia), '\nMinimma do dia: ': minima_do_dia}
-    # TODO: realizar um teste, onde os valores atribuidos as variáveis saiam na impressão, conforme está organizado
-    #  no dicionário "saida"#
+    valorizacao = ...
+    depreciacao = eval(maxima_do_dia) - eval(valor_cotado)
 
-    a = f'{maxima_do_dia, minima_do_dia}'.join(saida)
-    print(output)
+    if eval(variacao) > 0:
+        print(output + f'\nValorização: {valorizacao:.4f}')
+
+    else:
+        print(output + f'Depreciação: {depreciacao:.4f}')
+
+    return
+
+
+LINK_COTACAO_MOEDAS = 'https://economia.awesomeapi.com.br/last/USD-BR'
+
+
+def test_validando_requisicao():
+
+    requisicao = get(LINK_COTACAO_MOEDAS, timeout=None)
+    print(f'\n{requisicao.status_code}')
+
+    for sucesso_consulta in range(200, 300):
+        lista_sucesso_cosulta = [sucesso_consulta]
+        if requisicao.status_code in lista_sucesso_cosulta:
+            print('A consulta deu certo')
+
+    for nao_econtrado in range(400, 500):
+        lista_nao_encontrado = [nao_econtrado]
+        if requisicao.status_code in lista_nao_encontrado:
+            print('Cotação não encontrada')
+
+    for erro_servidor in range(500, 600):
+        lista_erro_servidor = [erro_servidor]
+        if requisicao.status_code in lista_erro_servidor:
+            print('Não foi possível consultar cotação devido a um erro interno')
+
+    return

@@ -17,16 +17,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-    # Experimental
-    while True:
-        hora = datetime.today().strftime('%H%M')
-        hora_convertida_int = eval(hora)
-
-        match hora_convertida_int:
-            case True:
-                if hora_convertida_int > 1000:
-                    main()
-            case 1800:
-                break
+    exit()

@@ -11,7 +11,7 @@ dir_twilio_account_sid = f'{dir_root}TWILIO_ACCOUNT_SID.txt'
 dir_twilio_auth_token = f'{dir_root}TWILIO_AUTH_TOKEN.txt'
 
 dir_twilio_phone_number = f'{dir_root}TWILIO_PHONE_NUMBER.txt'
-dir_whatsapp_twilio_phone_number = f'{dir_root}TWILIO_WHATSAPP_PHONE_NUMBER.txt'
+
 
 file_ = os.path.exists(dir_root)
 
@@ -29,17 +29,10 @@ if file_:
         TWILIO_PHONE_NUMBER = tpn.read()
         tpn.close()
 
-    with open(dir_whatsapp_twilio_phone_number, 'r') as twpn:
-        TWILIO_WHATSAPP_PHONE_NUMBER = twpn.read()
-        twpn.close()
-
     with open(dir_telefone_destino, 'r') as dpn:
         DESTINATION_NUMBER = dpn.read()
         dpn.close()
 
-    with open(dir_telefone_whats_destino, 'r') as dwpn:
-        DESTINATION_WHATSAPP_NUMBER = dwpn.read()
-        dwpn.close()
 
 else:
     print('Diretório inexistente')

@@ -3,15 +3,17 @@ from tratando_requisicao import verificando_status_erro_requisicao
 
 
 def consulta_cotacao_moeda(link_consulta):
+
     USD = 'USD'
     BRL = 'BRL'
     PARES = f'{USD}-{BRL}'
     PARES_JSON = f'{USD}{BRL}'
 
     requisicao = get(f'{link_consulta}/{PARES}', timeout=None)
+    if_erro_consulta_cotacao = 'Não foi possível realizar consulta da cotação neste momento. Tente novamente mais tarde'
 
     if verificando_status_erro_requisicao(requisicao):
-        verificando_status_erro_requisicao(requisicao)
+        return if_erro_consulta_cotacao
     else:
         saida_em_json = requisicao.json()[f'{PARES_JSON}']
         valor_cotado = saida_em_json['ask']

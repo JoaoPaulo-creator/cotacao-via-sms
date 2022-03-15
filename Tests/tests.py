@@ -1,11 +1,8 @@
-import wsgiref.validate
-
 import pytest
 from httpx import get
 import constants as const
-from time import sleep
 from datetime import datetime
-import os.path
+
 
 
 def test_consulta_cotacao_moeda():

@@ -18,7 +18,6 @@ def main():
 if __name__ == '__main__':
     main()
 
-
     # Experimental
     while True:
         hora = datetime.today().strftime('%H%M')

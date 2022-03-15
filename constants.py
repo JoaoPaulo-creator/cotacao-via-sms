@@ -27,7 +27,6 @@ if file_:
 
     with open(dir_twilio_phone_number, 'r') as tpn:
         TWILIO_PHONE_NUMBER = tpn.read()
-        print(TWILIO_PHONE_NUMBER)
         tpn.close()
 
     with open(dir_whatsapp_twilio_phone_number, 'r') as twpn:
@@ -41,6 +40,6 @@ if file_:
     with open(dir_telefone_whats_destino, 'r') as dwpn:
         DESTINATION_WHATSAPP_NUMBER = dwpn.read()
         dwpn.close()
+
 else:
     print('Diretório inexistente')
-

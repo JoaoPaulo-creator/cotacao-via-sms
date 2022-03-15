@@ -4,7 +4,6 @@ import constants as const
 from datetime import datetime
 
 
-
 def test_consulta_cotacao_moeda():
     requisicao = get(const.LINK_COTACAO_MOEDAS, timeout=None)
     saida_em_json = requisicao.json()['USDBRL']

@@ -34,6 +34,7 @@ if __name__ == '__main__':
                 main()
                 numero_de_envio_sms(numero_envio)
             case 1820:
+                print('Finalizando execução')
                 break
 
                 

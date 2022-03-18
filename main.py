@@ -19,6 +19,7 @@ def numero_de_envio_sms(nro_envios):
 
 
 if __name__ == '__main__':
+
     hora = datetime.today().strftime("%H%M")
     hora_convertida_int = eval(hora)
     numero_envio = 0
@@ -35,4 +36,5 @@ if __name__ == '__main__':
             case 1820:
                 break
 
+                
 exit()

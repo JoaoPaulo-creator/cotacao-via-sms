@@ -35,8 +35,4 @@ if __name__ == '__main__':
             case 1820:
                 break
 
-
-
-
-
-
+exit()

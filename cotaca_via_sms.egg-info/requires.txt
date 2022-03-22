@@ -1,0 +1,8 @@
+anyio
+httpcore
+httpx
+idna
+py
+pytest
+twilio
+urllib3

@@ -22,28 +22,27 @@ if __name__ == '__main__':
         match hora_convertida_int:
             case 1000:
                 main()
-                sleep(55)
+                sleep(60)
 
             case 1100:
                 main()
-                sleep(55)
+                sleep(60)
 
             case 1300:
                 main()
-                sleep(55)
+                sleep(60)
 
             case 1445:
                 main()
-                sleep(55)
+                sleep(60)
 
             case 1645:
                 main()
-                sleep(55)
+                sleep(60)
 
             case 1755:
                 main()
-                sleep(55)
+                sleep(60)
 
             case 1800:
                 break
-

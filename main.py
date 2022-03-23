@@ -13,28 +13,37 @@ def main():
     message_sms(corpo_mensagem, numero_destino_sms)
 
 
-def numero_de_envio_sms(nro_envios):
-    if nro_envios == 2:
-        exit()
-
-
 if __name__ == '__main__':
 
-    hora = datetime.today().strftime("%H%M")
-    hora_convertida_int = eval(hora)
-    numero_envio = 0
     while True:
-        sleep(2)
-        numero_envio += 1
+        hora = datetime.today().strftime("%H%M")
+        hora_convertida_int = eval(hora)
+
         match hora_convertida_int:
-            case 1816:
+            case 1000:
                 main()
-                numero_de_envio_sms(numero_envio)
-            case 1819:
+                sleep(55)
+
+            case 1100:
                 main()
-                numero_de_envio_sms(numero_envio)
-            case 1820:
+                sleep(55)
+
+            case 1300:
+                main()
+                sleep(55)
+
+            case 1445:
+                main()
+                sleep(55)
+
+            case 1645:
+                main()
+                sleep(55)
+
+            case 1755:
+                main()
+                sleep(55)
+
+            case 1800:
                 break
 
-                
-exit()
